@@ -769,7 +769,7 @@ namespace RSACrypto
         private void BtnLoadText_Click(object sender, EventArgs e)
         {
             BtnSaveCipherAt.Enabled = true;
-            stringFile = BitConverter.ToString(RSAHelper.ConvertTextToByte(ReadFile(TextFfilePath.Text)));
+            stringFile = BitConverter.ToString(RSAHelper.ConvertTextToByte(ReadFile(TextFfilePath.Text) + " "));
             MessageBox.Show("Text Loaded Successfully");
             groupBox7.Enabled = true;
         }

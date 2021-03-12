@@ -11,6 +11,7 @@ namespace RSACrypto
 {
     class RSAHelper
     {
+
         public static byte[] DecodeHex(string hextext)
         {
             String[] arr = hextext.Split('-');
@@ -35,16 +36,17 @@ namespace RSACrypto
             return m1.ToArray();
         }
 
+
         public static byte[] ConvertTextToByte(string text)
         {
-            var bytes = Encoding.Unicode.GetBytes(text.ToCharArray());
+            var bytes = new UnicodeEncoding().GetBytes(text.ToCharArray());
             return bytes;
         }
 
         public static string ConvertByteToText(byte[] bytes)
         {
-            var x = Encoding.Unicode.GetString(bytes);
-            return Encoding.Unicode.GetString(bytes);
+            var result = new UnicodeEncoding().GetString(bytes);
+            return result;//Encoding.Unicode.GetString(bytes);
         }
     }
 }
